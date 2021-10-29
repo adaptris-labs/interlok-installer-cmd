@@ -8,8 +8,9 @@ ext {
   latestBaseFilesystemUrl = "https://development.adaptris.net/installers/interlok/latest-stable/base-filesystem-no-ui.zip"
   interlokBaseFilesystemUrl = project.findProperty("interlokBaseFilesystemUrl") ?: latestBaseFilesystemUrl
   
-  interlokVersion = project.findProperty("interlokVersion") ?: "NEED interlokVersion PROPERTY"
+  interlokVersion = System.getProperty("interlokVersion") ?: (project.findProperty("interlokVersion") ?: "NEED interlokVersion PROPERTY")
   interlokDistDirectory = System.getProperty("interlokDistDirectory")
+  includeWar = System.getProperty("includeWar")
   additionalNexusBaseUrl = System.getProperty("interlokDistDirectory") ?: (project.findProperty("additionalNexusBaseUrl") ?: "")
   srcInterlokDir = "src/main/interlok/"
   dependenciesFile = "$projectDir/optional-components.list"

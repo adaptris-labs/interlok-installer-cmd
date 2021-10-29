@@ -7,7 +7,7 @@ Command line installer for Interlok. This automatically downloads the selected o
 
 ## Usage
 
-There is a script called 'interlok-installer' or 'interlok-installer.bat' for Windows users in the 'bin' direactory to start the installer.
+There is a script called 'interlok-installer' or 'interlok-installer.bat' for Windows users in the 'bin' directory to start the installer.
 
 ```
 ./interlok-installer -DinterlokDistDirectory=/opt/Adaptris/Interlok
@@ -28,7 +28,7 @@ If you want to include a different maven compatible nexus instance (either you'r
 All the available optional components for the installer version are listed in the optional-components.list file.
 You need to uncomment the optional components you wish to install with the Interlok.
 
-e.g If you want to install interlok-jslt and interlok-json, it should be like:
+e.g. If you want to install interlok-jslt and interlok-json, it should be like:
 
 ```
 ...

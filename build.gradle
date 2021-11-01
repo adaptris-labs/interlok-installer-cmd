@@ -1,107 +1,64 @@
+import org.apache.tools.ant.filters.*
+
 plugins {
-  id "de.undercouch.download" version "4.1.2"
+  id "application"
+  id "maven-publish"
 }
 
 ext {
-  interlokParentGradle = "https://raw.githubusercontent.com/adaptris/interlok-build-parent/1.8.2/v4/build.gradle"
+  releaseVersion = project.findProperty("releaseVersion") ?: "4.3-SNAPSHOT"
+  nexusBaseUrl = project.findProperty("nexusBaseUrl") ?: "https://nexus.adaptris.net/nexus"
+  mavenPublishUrl = project.findProperty("mavenPublishUrl") ?: nexusBaseUrl + "/content/repositories/snapshots"
+  repoUsername = project.findProperty("repoUsername") ?: "set in gradle.properties"
+  repoPassword = project.findProperty("repoPassword") ?: "set in gradle.properties"
 
-  latestBaseFilesystemUrl = "https://development.adaptris.net/installers/interlok/latest-stable/base-filesystem-no-ui.zip"
-  interlokBaseFilesystemUrl = project.findProperty("interlokBaseFilesystemUrl") ?: latestBaseFilesystemUrl
-  
-  interlokVersion = System.getProperty("interlokVersion") ?: (project.findProperty("interlokVersion") ?: "NEED interlokVersion PROPERTY")
-  interlokDistDirectory = System.getProperty("interlokDistDirectory")
-  includeWar = System.getProperty("includeWar")
-  additionalNexusBaseUrl = System.getProperty("interlokDistDirectory") ?: (project.findProperty("additionalNexusBaseUrl") ?: "")
-  srcInterlokDir = "src/main/interlok/"
-  dependenciesFile = "$projectDir/optional-components.list"
+  componentName = "Interlok Installer CMD"
+  componentDesc = "Interlok command line installer"
+  organizationName = "Adaptris Ltd"
+  organizationUrl = "http://interlok.adaptris.net"
 }
 
 repositories {
-  if (project.hasProperty("additionalNexusBaseUrl")) {
-    maven { url "${additionalNexusBaseUrl}" }
-  }
-}
-
-allprojects {
-  apply from: "${interlokParentGradle}"
+  mavenCentral()
+  maven { url "$nexusBaseUrl/content/groups/public" }
+  maven { url "$nexusBaseUrl/content/groups/interlok" }
 }
 
 dependencies {
-  readDependencies().each {
-	if (it.matches(".*:.*:.*")) {
-      add("interlokRuntime", "$it", { changing=true })
-	  if (isInterlok(it)) {
-        add("interlokJavadocs", "$it:javadoc", { changing=true; transitive=false })
-	  }
-    } else {
-      add("interlokRuntime", "$it:$interlokVersion", { changing=true })
-	  if (isInterlok(it)) {
-        add("interlokJavadocs", "$it:$interlokVersion:javadoc", { changing=true; transitive=false })
-	  }
+}
+
+group   = "com.adaptris"
+version = releaseVersion
+
+processResources {
+  filesMatching("**/*.properties") {
+    filter ReplaceTokens, tokens: [
+	    "release.version": project.property("releaseVersion")
+	  ]
+  }
+}
+
+distTar {
+  compression = Compression.GZIP
+  archiveExtension = "tar.gz"
+}
+
+distributions {
+  main {
+    contents {
+      from 'build/resources/main'
     }
   }
 }
 
-def isInterlok(gav) {
-  return gav.startsWith("com.adaptris:interlok-")
-}
-
-// Read all the optional component dependencies from a file
-def readDependencies() {
-  def dependenciesList = []
-  def file = new File(dependenciesFile)
-  if (file.isFile()) {
-    file.eachLine {
-      if (!it.startsWith("#")) {
-	    dependenciesList.add(it);
-	  }
+publishing {
+  repositories {
+    maven {
+      credentials {
+        username repoUsername
+        password repoPassword
+      }
+      url mavenPublishUrl
     }
-  } else {
-    logger.warn("No dependency found")
-  }
-  return dependenciesList
-}
-
-task cleanInstall () {
-  description 'Delete install directory'
-  group 'build'
-  doLast {
-    new File(interlokDistDirectory).deleteDir()
   }
 }
-
-/**
- * The following two tasks download a ZIP file and extract its
- * contents to the build directory
- */
-task downloadBaseFilesystemZip(type: Download) {
-  src interlokBaseFilesystemUrl
-  dest new File(buildDir, "base-filesystem.zip")
-}
-
-// This will copy the config, bin, ui-resoures and webapps dirs
-task downloadAndUnzipFile(dependsOn: downloadBaseFilesystemZip, type: Copy) {
-  from zipTree(downloadBaseFilesystemZip.dest)
-  into file(srcInterlokDir)
-}
-
-task downloadAndUnzipFileAndCopyConfigDir(dependsOn: downloadAndUnzipFile, type: Copy) {
-  // Do we need that or the previous step is enough?
-  from file(srcInterlokDir + "config/")
-  into interlokTmpConfigDirectory
-  
-  // Add execute permission to start-interlok bash file
-  doLast {
-    ant.chmod(file: "$srcInterlokDir/bin/start-interlok", perm: "+x")
-  }
-}
-
-task finishInstall() {
-  doLast {
-    logger.lifecycle("Interlok installed in [$interlokDistDirectory]")
-  }
-}
-
-localizeConfig.dependsOn downloadAndUnzipFileAndCopyConfigDir
-installDist.dependsOn downloadAndUnzipFileAndCopyConfigDir
-installDist.finalizedBy finishInstall

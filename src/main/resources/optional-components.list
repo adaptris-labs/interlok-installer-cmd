@@ -1,0 +1,204 @@
+## Interlok AWS/Common - Common components for accessing AWS ##
+# com.adaptris:interlok-aws-common
+## Interlok AWS/KMS - Components that interact with AWS KMS to perform sign/encrypt/decrypt/verify operations ##
+# com.adaptris:interlok-aws-kms
+## Interlok AWS/Kinesis - Components that interact AWS Kinesis data streams ##
+# com.adaptris:interlok-aws-kinesis
+## Interlok AWS/Kinesis SDK - Services that interact with AWS Kinesis Streams ##
+# com.adaptris:interlok-aws-kinesis-sdk
+## Interlok AWS/S3 - Services that interact (upload/download/delete) with AWS S3 Buckets and artefacts ##
+# com.adaptris:interlok-aws-s3
+## Interlok AWS/SNS - Publishing to AWS SNS topics ##
+# com.adaptris:interlok-aws-sns
+## Interlok AWS/SQS - Publishing & Consuming from AWS SQS natively or via their JMS provider ##
+# com.adaptris:interlok-aws-sqs
+## Interlok Application/KIE - Using KIE/Drools with Interlok services ##
+# com.adaptris:interlok-kie
+## Interlok Application/SAP - Support for SAP R/3 using BAPI/RFC ##
+# com.adaptris:interlok-sap
+## Interlok Azure/Common - Common components for interacting with Azure and Office 365 ##
+# com.adaptris:interlok-azure-core
+## Interlok Azure/CosmosDB - Components that interact with Azure CosmosDB ##
+# com.adaptris:interlok-azure-cosmosdb
+## Interlok Azure/DataLake - Upload/Download files stored in Azure Datalake blobstorage ##
+# com.adaptris:interlok-azure-datalake
+## Interlok Azure/OneDrive - Support for upload/download of files stored in Onedrive ##
+# com.adaptris:interlok-azure-onedrive
+## Interlok Azure/Outlook - Send/Receive emails via Office 365/Exchange ##
+# com.adaptris:interlok-azure-mail
+## Interlok Cache/Apache Geode - Using Apache Geode as a cache provider within Interlok ##
+# com.adaptris:interlok-apache-geode
+## Interlok Cache/EHCache - Using ehcache 2.x as a cache provider within Interlok ##
+# com.adaptris:interlok-ehcache
+## Interlok Cache/JSR107 - Using any JSR107 cache implementation as a cache provider within Interlok ##
+# com.adaptris:interlok-jsr107-cache
+## Interlok Config/variable substitutions - SystemProperty / Environment / Variable substitution Config Pre-processors ##
+# com.adaptris:interlok-varsub
+## Interlok Config/xinclude - XSLT and XInclude Config Pre-processors ##
+# com.adaptris:interlok-xinclude
+## Interlok Google/GCloud PubSub - Consuming and producing messages via Google Cloud PubSub ##
+# com.adaptris:interlok-gcloud-pubsub
+## Interlok HPCC/dfuplus - Upload/Download of files via dfuplus executable ##
+# com.adaptris:interlok-hpcc
+## Interlok HTTP/Apache HTTP(4) - HTTP(s) using version 4 of Apache HTTP client ##
+# com.adaptris:interlok-apache-http
+## Interlok HTTP/Apache HTTP(5) - HTTP(s) using version 5 of Apache HTTP client ##
+# com.adaptris:interlok-apache-http5
+## Interlok HTTP/OkHttp - HTTP producer using the OkHttp library ##
+# com.adaptris:interlok-okhttp
+## Interlok JClouds/AWS STS - Connect using Apache JClouds to AWS Services using AWS Secure Token Service ##
+# com.adaptris:interlok-jclouds-aws-sts
+## Interlok JClouds/Blobstore - Use Apache jclouds to access your cloud storage ##
+# com.adaptris:interlok-jclouds-blobstore
+## Interlok JClouds/Common - Common classes for interacting with cloud providers via Apache JClouds ##
+# com.adaptris:interlok-jclouds-common
+## Interlok JMX/AMQP - Tunnelling JMX calls using AMQP via Apache QPID ##
+# com.adaptris:interlok-jmx-amqp
+## Interlok JMX/ActiveMQ - Tunnelling JMX calls via ActiveMQ ##
+# com.adaptris:interlok-jmx-activemq
+## Interlok JMX/Common - Common classes required to tunnel JMX calls ##
+# com.adaptris:interlok-jmx-jms-common
+## Interlok JMX/Jolokia - Tunnelling JMX calls via Jolokia ##
+# com.adaptris:interlok-jolokia
+## Interlok JMX/Solace - Tunnelling JMX calls via Solace ##
+# com.adaptris:interlok-jmx-solace
+## Interlok JMX/SonicMQ - Tunnelling JMX calls via SonicMQ ##
+# com.adaptris:interlok-jmx-sonicmq
+## Interlok Licence - Licensing support within Interlok ##
+# com.adaptris:interlok-licensing
+## Interlok Mail/Javamail - Integration with mail servers using javamail and apache mail libraries ##
+# com.adaptris:interlok-mail
+## Interlok Management/ActiveMQ - Embedded ActiveMQ management component ##
+# com.adaptris:interlok-activemq
+## Interlok Management/Artemis - Embedded Apache Artemis management component ##
+# com.adaptris:interlok-artemis
+## Interlok Management/Cluster - Management component for reporting on cluster instances. ##
+# com.adaptris:interlok-cluster-manager
+## Interlok Management/Exec - Management Component that starts arbitrary programs as part of Interlok bootstrap ##
+# com.adaptris:interlok-exec
+## Interlok Management/Failover - Starting Interlok as part of a failover cluster ##
+# com.adaptris:interlok-failover
+## Interlok Management/REST: Base - Common components for Interloks RESTful management components ##
+# com.adaptris:interlok-rest-base
+## Interlok Management/REST: Cluster - Internal Cluster management via a REST interface ##
+# com.adaptris:interlok-rest-cluster
+## Interlok Management/REST: Datadog - Expose metrics in a OpenTelemetry compliant fashion ##
+# com.adaptris:interlok-rest-provider-datadog
+## Interlok Management/REST: Health Check - 'Alive/Ready' and general health exposed as a REST endpoint ##
+# com.adaptris:interlok-rest-health-check
+## Interlok Management/REST: Interlok Metrics - Collecting internal metrics for exposure ##
+# com.adaptris:interlok-rest-metrics-profiler
+## Interlok Management/REST: JVM Metrics - Collecting JVM metrics and exposing them via a REST endpoint ##
+# com.adaptris:interlok-rest-metrics-jvm
+## Interlok Management/REST: Prometheus - Expose metrics in a OpenTelemetry compliant fashion ##
+# com.adaptris:interlok-rest-provider-prometheus
+## Interlok Management/SSH Tunnel - Management Component that starts some SSH Tunnels ##
+# com.adaptris:interlok-sshtunnel
+## Interlok Messaging/AMQP - Treating a AMQP 0.9.0/1.0 Provider as a JMS via Apache QPID ##
+# com.adaptris:interlok-amqp
+## Interlok Messaging/Kafka - Using Apache Kafka as a messaging platform ##
+# com.adaptris:interlok-kafka
+## Interlok Messaging/MQTT - Use a MQTT broker as a messaging platform ##
+# com.adaptris:interlok-mqtt
+## Interlok Messaging/MSMQ - Connect to MSMQ via the javonet .NET bridge ##
+# com.adaptris:interlok-msmq-javonet
+## Interlok Messaging/NATS - Using NATS.io as a messaging platform ##
+# com.adaptris:interlok-nats
+## Interlok Messaging/OracleAQ - Using OracleAQ as a JMS provider ##
+# com.adaptris:interlok-jms-oracleaq
+## Interlok Messaging/Solace - Using Solace as a Messaging Provider ##
+# com.adaptris:interlok-solace
+## Interlok Messaging/SonicMQ - Using SonicMQ as a JMS Provider ##
+# com.adaptris:interlok-jms-sonicmq
+## Interlok Messaging/Tibco - Using Tibco as as messaging platform ##
+# com.adaptris:interlok-tibco
+## Interlok Messaging/WebsphereMQ - Use IBM WebsphereMQ as your messaging platform ##
+# com.adaptris:interlok-webspheremq
+## Interlok Misc/Triggered - Custom Channel implementation that can be externally triggered to start/stop ##
+# com.adaptris:interlok-triggered
+## Interlok OAUTH/Azure - Retrieving OAUTH access tokens from Azure ##
+# com.adaptris:interlok-oauth-azure
+## Interlok OAUTH/Generic - Handling OAUTH where the provider does not have an explicit API or SDK ##
+# com.adaptris:interlok-oauth-generic
+## Interlok OAUTH/Google - Retrieving OAUTH access tokens from Google Cloud ##
+# com.adaptris:interlok-oauth-gcloud
+## Interlok OAUTH/Salesforce - Retrieving OAUTH access tokens from Salesforce ##
+# com.adaptris:interlok-oauth-salesforce
+## Interlok OS/AS400 - Interacting with AS400 systems ##
+# com.adaptris:interlok-as400
+## Interlok Profiler - Perform instrumentation to profile Interlok runtime. ##
+# com.adaptris:interlok-profiler
+## Interlok Scripting/Expressions - Simple mathematical expressions inside your configuration ##
+# com.adaptris:interlok-expressions
+## Interlok Scripting/JRuby - Explicit JRuby scripting capabilities rather than via JSR223 ##
+# com.adaptris:interlok-jruby
+## Interlok Security/PGP - A collection of services that provide PGP encryption, decryption, signing, and verification. ##
+# com.adaptris:interlok-pgp
+## Interlok Security/XML - Services that support JSR106 XML Encryption standard. ##
+# com.adaptris:interlok-xml-security
+## Interlok Service Tester/Core - Unit testing framework for Interlok ##
+# com.adaptris:interlok-service-tester
+## Interlok Service Tester/JSON - JSON Assertions for service-tester ##
+# com.adaptris:interlok-service-tester-json
+## Interlok Service Tester/Wiremock - Wiremock boostrapper for service-tester ##
+# com.adaptris:interlok-service-tester-wiremock
+## Interlok Service Tester/XML - XML Assertions for service-tester using xmlunit ##
+# com.adaptris:interlok-service-tester-xml
+## Interlok Storage/Cassandra - Services to interace with Datastax Cassandra ##
+# com.adaptris:interlok-cassandra
+## Interlok Storage/Elastic: Common - Elasticsearch components that are not transport specific ##
+# com.adaptris:interlok-elastic-common
+## Interlok Storage/Elastic: REST Client - Producing to Elasticsearch using their REST api ##
+# com.adaptris:interlok-elastic-rest
+## Interlok Storage/Filesystem - Perform filesystem operations within Interlok ##
+# com.adaptris:interlok-filesystem
+## Interlok Storage/Flyway - Custom JDBC Connection implementation that incorporates Flyway database migration ##
+# com.adaptris:interlok-flyway
+## Interlok Storage/JDBC - Improved services for interacting with JDBC ##
+# com.adaptris:interlok-jdbc
+## Interlok Storage/MongoDB - Services and Connections for interacting with MongoDB ##
+# com.adaptris:interlok-mongodb
+## Interlok Transform/CSV - Handling CSV files using Interlok; transform to XML, splitting, JDBC utilities ##
+# com.adaptris:interlok-csv
+## Interlok Transform/EDI - Interlok EDI Transformation services with caching of definitions ##
+# com.adaptris:interlok-edi-stream
+## Interlok Transform/EDI legacy - Interlok EDI Legacy transformations ##
+# com.adaptris:interlok-edi-legacy
+## Interlok Transform/Excel - Extract data from an Excel spreadsheet ##
+# com.adaptris:interlok-excel
+## Interlok Transform/Flatfile - Transformation of Flat files into XML ##
+# com.adaptris:interlok-flatfile
+## Interlok Transform/JQ - Transform JSON using JQ style syntax ##
+# com.adaptris:interlok-jq
+## Interlok Transform/JSLT - Support for JSON transforms via JSLT ##
+# com.adaptris:interlok-jslt
+## Interlok Transform/JSON - Everything JSON related; transformations, schemas, json-path (xpath-alike), splitting ##
+# com.adaptris:interlok-json
+## Interlok Transform/JSON Streaming - Streaming JSON in a STaX-alike manner ##
+# com.adaptris:interlok-json-streaming
+## Interlok Transform/JSON+CSV - Transform CSV into JSON and vice versa ##
+# com.adaptris:interlok-csv-json
+## Interlok Transform/JWT - Handling JWT in Interlok ##
+# com.adaptris:interlok-json-web-token
+## Interlok Transform/PDF - Transform a document into PDF ##
+# com.adaptris:interlok-pdf
+## Interlok Transform/STaX - Using STaX events to parse/emit XML within Interlok ##
+# com.adaptris:interlok-stax
+## Interlok Transform/SWIFT - Handle transforms to and from the SWIFT format ##
+# com.adaptris:interlok-swift
+## Interlok VCS/GIT - Checking config out of GIT on startup ##
+# com.adaptris:interlok-vcs-git
+## Interlok Webservices/CXF - Execute webservices using Apache CXF ##
+# com.adaptris:interlok-webservice-cxf
+## Interlok XA/ActiveMQ - ActiveMQ specific XA Vendor implementations ##
+# com.adaptris:interlok-xa-activemq
+## Interlok XA/Atomikos - XA JMS Consumer/Producer implementations that use Atomikos as the underlying transaction manager ##
+# com.adaptris:interlok-xa-atomikos
+## Interlok XA/Common - XA Components that are not provider specific ##
+# com.adaptris:interlok-xa-jms
+## Interlok XA/Solace - Solace specific XA Vendor implementations ##
+# com.adaptris:interlok-xa-solace
+## Interlok XA/Tibco - Tibco specific XA Vendor implementations ##
+# com.adaptris:interlok-xa-tibco
+## Interlok XA/WebsphereMQ - WebsphereMQ specific XA Vendor implementations ##
+# com.adaptris:interlok-xa-wmq

@@ -5,9 +5,18 @@ Command line installer for Interlok. This automatically downloads the selected o
 * It uses gradle behind the scenes.
 * It makes use our parent build.gradle https://github.com/adaptris-labs/interlok-build-parent and work in the same way as https://github.com/adaptris-labs/interlok-install-builder.
 
-## Usage
+## Build
 
-There is a script called 'interlok-installer' or 'interlok-installer.bat' for Windows users in the 'bin' directory to start the installer.
+### Zip or Tar (Jar + Script)
+
+```
+$ ./gradlew clean assemble
+```
+
+## Execute
+
+First unzip or untar the archive file, then launch bin/interlok-installer.bat or bin/interlok-installer depending if you are on windows or linux/mac.
+Use the property `interlokDistDirectory` to specify the directory where you want to install Interlok.
 
 ```
 ./interlok-installer -DinterlokDistDirectory=/opt/Adaptris/Interlok

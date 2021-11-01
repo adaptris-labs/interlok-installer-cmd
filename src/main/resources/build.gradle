@@ -1,0 +1,107 @@
+plugins {
+  id "de.undercouch.download" version "4.1.2"
+}
+
+ext {
+  interlokParentGradle = "https://raw.githubusercontent.com/adaptris/interlok-build-parent/1.8.2/v4/build.gradle"
+
+  latestBaseFilesystemUrl = "https://development.adaptris.net/installers/interlok/latest-stable/base-filesystem-no-ui.zip"
+  interlokBaseFilesystemUrl = project.findProperty("interlokBaseFilesystemUrl") ?: latestBaseFilesystemUrl
+  
+  interlokVersion = System.getProperty("interlokVersion") ?: (project.findProperty("interlokVersion") ?: "NEED interlokVersion PROPERTY")
+  interlokDistDirectory = System.getProperty("interlokDistDirectory")
+  includeWar = System.getProperty("includeWar") ?: project.findProperty("includeWar")
+  additionalNexusBaseUrl = System.getProperty("interlokDistDirectory") ?: (project.findProperty("additionalNexusBaseUrl") ?: "")
+  srcInterlokDir = "src/main/interlok/"
+  dependenciesFile = "$projectDir/optional-components.list"
+}
+
+repositories {
+  if (project.hasProperty("additionalNexusBaseUrl")) {
+    maven { url "${additionalNexusBaseUrl}" }
+  }
+}
+
+allprojects {
+  apply from: "${interlokParentGradle}"
+}
+
+dependencies {
+  readDependencies().each {
+	if (it.matches(".*:.*:.*")) {
+      add("interlokRuntime", "$it", { changing=true })
+	  if (isInterlok(it)) {
+        add("interlokJavadocs", "$it:javadoc", { changing=true; transitive=false })
+	  }
+    } else {
+      add("interlokRuntime", "$it:$interlokVersion", { changing=true })
+	  if (isInterlok(it)) {
+        add("interlokJavadocs", "$it:$interlokVersion:javadoc", { changing=true; transitive=false })
+	  }
+    }
+  }
+}
+
+def isInterlok(gav) {
+  return gav.startsWith("com.adaptris:interlok-")
+}
+
+// Read all the optional component dependencies from a file
+def readDependencies() {
+  def dependenciesList = []
+  def file = new File(dependenciesFile)
+  if (file.isFile()) {
+    file.eachLine {
+      if (!it.startsWith("#")) {
+	    dependenciesList.add(it);
+	  }
+    }
+  } else {
+    logger.warn("No dependency found")
+  }
+  return dependenciesList
+}
+
+task cleanInstall () {
+  description 'Delete install directory'
+  group 'build'
+  doLast {
+    new File(interlokDistDirectory).deleteDir()
+  }
+}
+
+/**
+ * The following two tasks download a ZIP file and extract its
+ * contents to the build directory
+ */
+task downloadBaseFilesystemZip(type: Download) {
+  src interlokBaseFilesystemUrl
+  dest new File(buildDir, "base-filesystem.zip")
+}
+
+// This will copy the config, bin, ui-resoures and webapps dirs
+task downloadAndUnzipFile(dependsOn: downloadBaseFilesystemZip, type: Copy) {
+  from zipTree(downloadBaseFilesystemZip.dest)
+  into file(srcInterlokDir)
+}
+
+task downloadAndUnzipFileAndCopyConfigDir(dependsOn: downloadAndUnzipFile, type: Copy) {
+  // Do we need that or the previous step is enough?
+  from file(srcInterlokDir + "config/")
+  into interlokTmpConfigDirectory
+  
+  // Add execute permission to start-interlok bash file
+  doLast {
+    ant.chmod(file: "$srcInterlokDir/bin/start-interlok", perm: "+x")
+  }
+}
+
+task finishInstall() {
+  doLast {
+    logger.lifecycle("Interlok installed in [$interlokDistDirectory]")
+  }
+}
+
+localizeConfig.dependsOn downloadAndUnzipFileAndCopyConfigDir
+installDist.dependsOn downloadAndUnzipFileAndCopyConfigDir
+installDist.finalizedBy finishInstall

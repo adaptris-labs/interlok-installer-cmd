@@ -30,6 +30,8 @@ dependencies {
 group   = "com.adaptris"
 version = releaseVersion
 
+jar.enabled = false
+
 processResources {
   filesMatching("**/*.properties") {
     filter ReplaceTokens, tokens: [

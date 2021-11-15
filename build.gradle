@@ -57,6 +57,7 @@ distributions {
 publishing {
   publications {
     artifact distZip
+    artifact distTar
 	
     mavenJava(MavenPublication) {
       pom.withXml {

@@ -55,6 +55,19 @@ distributions {
 }
 
 publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      pom.withXml {
+        asNode().appendNode("name", componentName)
+        asNode().appendNode("description", componentDesc)
+        def properties = asNode().appendNode("properties")
+        properties.appendNode("target", "4.0.0+")
+        properties.appendNode("license", "false")
+        properties.appendNode("readme", "https://raw.githubusercontent.com/adaptris/interlok-installer-cmd/develop/README.md")
+        properties.appendNode("repository", "https://github.com/adaptris/interlok-installer-cmd")
+      }
+    }
+  }
   repositories {
     maven {
       credentials {

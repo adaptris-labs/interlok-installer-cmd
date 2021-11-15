@@ -56,10 +56,9 @@ distributions {
 
 publishing {
   publications {
-    artifact distZip
-    artifact distTar
-	
     mavenJava(MavenPublication) {
+      artifact distZip
+      artifact distTar
       pom.withXml {
         asNode().appendNode("name", componentName)
         asNode().appendNode("description", componentDesc)

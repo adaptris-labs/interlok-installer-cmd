@@ -190,6 +190,8 @@
 # com.adaptris:interlok-stax
 ## Interlok Transform/SWIFT - Handle transforms to and from the SWIFT format ##
 # com.adaptris:interlok-swift
+## Interlok Validation/CSV - Validating CSV files using a CSV Schema ##
+# com.adaptris:interlok-csv-schema
 ## Interlok VCS/GIT - Checking config out of GIT on startup ##
 # com.adaptris:interlok-vcs-git
 ## Interlok Webservices/CXF - Execute webservices using Apache CXF ##

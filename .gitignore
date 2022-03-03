@@ -24,6 +24,6 @@ logs
 log4j.properties
 *.orig
 target
-bin
+./bin
 .gradle
-gradle.properties
+./gradle.properties

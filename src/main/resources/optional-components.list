@@ -78,6 +78,8 @@
 # com.adaptris:interlok-exec
 ## Interlok Management/Failover - Starting Interlok as part of a failover cluster ##
 # com.adaptris:interlok-failover
+## Interlok Management/Proxy - Proxy another HTTP(s) endpoint ##
+# com.adaptris:interlok-proxy
 ## Interlok Management/REST: Base - Common components for Interloks RESTful management components ##
 # com.adaptris:interlok-rest-base
 ## Interlok Management/REST: Cluster - Internal Cluster management via a REST interface ##
@@ -106,6 +108,8 @@
 # com.adaptris:interlok-nats
 ## Interlok Messaging/OracleAQ - Using OracleAQ as a JMS provider ##
 # com.adaptris:interlok-jms-oracleaq
+## Interlok Messaging/RabbitMQ - Connectivity with RabbitMQ through their libraries ##
+# com.adaptris:interlok-rabbitmq
 ## Interlok Messaging/Solace - Using Solace as a Messaging Provider ##
 # com.adaptris:interlok-solace
 ## Interlok Messaging/SonicMQ - Using SonicMQ as a JMS Provider ##
@@ -186,6 +190,8 @@
 # com.adaptris:interlok-stax
 ## Interlok Transform/SWIFT - Handle transforms to and from the SWIFT format ##
 # com.adaptris:interlok-swift
+## Interlok Validation/CSV - Validating CSV files using a CSV Schema ##
+# com.adaptris:interlok-csv-schema
 ## Interlok VCS/GIT - Checking config out of GIT on startup ##
 # com.adaptris:interlok-vcs-git
 ## Interlok Webservices/CXF - Execute webservices using Apache CXF ##

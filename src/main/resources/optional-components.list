@@ -42,6 +42,8 @@
 # com.adaptris:interlok-hpcc
 ## Interlok HTTP/Apache HTTP(4) - HTTP(s) using version 4 of Apache HTTP client ##
 # com.adaptris:interlok-apache-http
+## Interlok HTTP/Apache HTTP(4) Async - Support for Apache HTTP Async client ##
+# com.adaptris:interlok-apache-http-async
 ## Interlok HTTP/Apache HTTP(5) - HTTP(s) using version 5 of Apache HTTP client ##
 # com.adaptris:interlok-apache-http5
 ## Interlok HTTP/OkHttp - HTTP producer using the OkHttp library ##
@@ -190,12 +192,14 @@
 # com.adaptris:interlok-stax
 ## Interlok Transform/SWIFT - Handle transforms to and from the SWIFT format ##
 # com.adaptris:interlok-swift
-## Interlok Validation/CSV - Validating CSV files using a CSV Schema ##
-# com.adaptris:interlok-csv-schema
 ## Interlok VCS/GIT - Checking config out of GIT on startup ##
 # com.adaptris:interlok-vcs-git
+## Interlok Validation/CSV - Validating CSV files using a CSV Schema ##
+# com.adaptris:interlok-csv-schema
 ## Interlok Webservices/CXF - Execute webservices using Apache CXF ##
 # com.adaptris:interlok-webservice-cxf
+## Interlok Work Units - Import work units into your configuration. ##
+# com.adaptris:interlok-work-unit
 ## Interlok XA/ActiveMQ - ActiveMQ specific XA Vendor implementations ##
 # com.adaptris:interlok-xa-activemq
 ## Interlok XA/Atomikos - XA JMS Consumer/Producer implementations that use Atomikos as the underlying transaction manager ##

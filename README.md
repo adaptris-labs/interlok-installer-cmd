@@ -1,5 +1,7 @@
 # interlok-installer-cmd
 
+[![GitHub tag](https://img.shields.io/github/tag/adaptris/interlok-installer-cmd.svg)](https://github.com/adaptris/interlok-installer-cmd/tags) [![license](https://img.shields.io/github/license/adaptris/interlok-installer-cmd.svg)](https://github.com/adaptris/interlok-installer-cmd/blob/develop/LICENSE) [![Build Status](https://travis-ci.org/adaptris/interlok-installer-cmd.svg?branch=develop)](https://travis-ci.org/adaptris/interlok-installer-cmd) [![codecov](https://codecov.io/gh/adaptris/interlok-installer-cmd/branch/develop/graph/badge.svg)](https://codecov.io/gh/adaptris/interlok-installer-cmd) [![Language grade: Java](https://img.shields.io/lgtm/grade/java/g/adaptris/interlok-installer-cmd.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/adaptris/interlok-installer-cmd/context:java) [![Total alerts](https://img.shields.io/lgtm/alerts/g/adaptris/interlok-installer-cmd.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/adaptris/interlok-installer-cmd/alerts/)
+
 Command line installer for Interlok. This automatically downloads the selected optional components along with the base system to build an Interlok installation in your preferred location.
 
 * It uses gradle behind the scenes.

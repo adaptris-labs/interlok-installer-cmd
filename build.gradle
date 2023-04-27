@@ -6,7 +6,7 @@ plugins {
 }
 
 ext {
-  releaseVersion = project.findProperty("releaseVersion") ?: "4.5.0-RELEASE"
+  releaseVersion = project.findProperty("releaseVersion") ?: "4.6-SNAPSHOT"
   nexusBaseUrl = project.findProperty("nexusBaseUrl") ?: "https://nexus.adaptris.net/nexus"
   mavenPublishUrl = project.findProperty("mavenPublishUrl") ?: nexusBaseUrl + "/content/repositories/snapshots"
   repoUsername = project.findProperty("repoUsername") ?: "set in gradle.properties"

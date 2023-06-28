@@ -1,17 +1,17 @@
 plugins {
-  id "de.undercouch.download" version "4.1.2"
+  id "de.undercouch.download" version "5.4.0"
 }
 
 ext {
-  interlokParentGradle  = project.findProperty("interlokParentGradle") ?: "https://raw.githubusercontent.com/adaptris/interlok-build-parent/1.9.1/v4/build.gradle"
+  interlokParentGradle  = project.findProperty("interlokParentGradle") ?: "https://raw.githubusercontent.com/adaptris/interlok-build-parent/develop/v5/build.gradle"
 
-  latestBaseFilesystemUrl = "https://nexus.adaptris.net/nexus/content/groups/interlok/com/adaptris/interlok-base-filesystem/1.1.0/interlok-base-filesystem-1.1.0-with-templates.zip"
+  latestBaseFilesystemUrl = "https://nexus.adaptris.net/nexus/content/groups/interlok/com/adaptris/interlok-base-filesystem/1.1.0/interlok-base-filesystem-1.2.0-with-templates.zip"
   interlokBaseFilesystemUrl = project.findProperty("interlokBaseFilesystemUrl") ?: latestBaseFilesystemUrl
   
   interlokVersion = System.getProperty("interlokVersion") ?: (project.findProperty("interlokVersion") ?: "NEED interlokVersion PROPERTY")
   interlokDistDirectory = System.getProperty("interlokDistDirectory")
   includeWar = System.getProperty("includeWar") ?: project.findProperty("includeWar")
-  additionalNexusBaseUrl = System.getProperty("interlokDistDirectory") ?: (project.findProperty("additionalNexusBaseUrl") ?: "")
+  additionalNexusBaseUrl = System.getProperty("additionalNexusBaseUrl") ?: (project.findProperty("additionalNexusBaseUrl") ?: "")
   srcInterlokDir = "src/main/interlok/"
   dependenciesFile = "$projectDir/optional-components.list"
 }

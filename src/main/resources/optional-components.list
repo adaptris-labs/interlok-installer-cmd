@@ -1,3 +1,5 @@
+## BIP Interlok Services - XML/JSON manipulation services for BIP ##
+# com.adaptris:bip-services
 ## Interlok AWS/Common - Common components for accessing AWS ##
 # com.adaptris:interlok-aws-common
 ## Interlok AWS/KMS - Components that interact with AWS KMS to perform sign/encrypt/decrypt/verify operations ##
@@ -12,6 +14,12 @@
 # com.adaptris:interlok-aws-sns
 ## Interlok AWS/SQS - Publishing & Consuming from AWS SQS natively or via their JMS provider ##
 # com.adaptris:interlok-aws-sqs
+## Interlok AWS2/Common - Common components for accessing AWS ##
+# com.adaptris:interlok-aws2-common
+## Interlok AWS2/KMS - Components that interact with AWS KMS to perform sign/encrypt/decrypt/verify operations ##
+# com.adaptris:interlok-aws2-kms
+## Interlok AWS2/S3 - Services that interact (upload/download/delete) with AWS S3 Buckets and artefacts ##
+# com.adaptris:interlok-aws2-s3
 ## Interlok Application/KIE - Using KIE/Drools with Interlok services ##
 # com.adaptris:interlok-kie
 ## Interlok Application/SAP - Support for SAP R/3 using BAPI/RFC ##
@@ -100,6 +108,8 @@
 # com.adaptris:interlok-sshtunnel
 ## Interlok Messaging/AMQP - Treating a AMQP 0.9.0/1.0 Provider as a JMS via Apache QPID ##
 # com.adaptris:interlok-amqp
+## Interlok Messaging/Jakarta JMS - Common components for accessing JMS 3 systems. ##
+# com.adaptris:interlok-jms3-common
 ## Interlok Messaging/Kafka - Using Apache Kafka as a messaging platform ##
 # com.adaptris:interlok-kafka
 ## Interlok Messaging/MQTT - Use a MQTT broker as a messaging platform ##
@@ -134,14 +144,14 @@
 # com.adaptris:interlok-as400
 ## Interlok Profiler - Perform instrumentation to profile Interlok runtime. ##
 # com.adaptris:interlok-profiler
+## Interlok Scripting - Javascript enabled services/components. ##
+# com.adaptris:interlok-scripting
 ## Interlok Scripting/Expressions - Simple mathematical expressions inside your configuration ##
 # com.adaptris:interlok-expressions
 ## Interlok Scripting/JRuby - Explicit JRuby scripting capabilities rather than via JSR223 ##
 # com.adaptris:interlok-jruby
 ## Interlok Security/PGP - A collection of services that provide PGP encryption, decryption, signing, and verification. ##
 # com.adaptris:interlok-pgp
-## Interlok Security/XML - Services that support JSR106 XML Encryption standard. ##
-# com.adaptris:interlok-xml-security
 ## Interlok Service Tester/Core - Unit testing framework for Interlok ##
 # com.adaptris:interlok-service-tester
 ## Interlok Service Tester/JSON - JSON Assertions for service-tester ##
@@ -156,6 +166,8 @@
 # com.adaptris:interlok-elastic-common
 ## Interlok Storage/Elastic: REST Client - Producing to Elasticsearch using their REST api ##
 # com.adaptris:interlok-elastic-rest
+## Interlok Storage/Elastic: SDK Client - Producing to Elasticsearch using their SDK ##
+# com.adaptris:interlok-elastic-sdk
 ## Interlok Storage/Filesystem - Perform filesystem operations within Interlok ##
 # com.adaptris:interlok-filesystem
 ## Interlok Storage/Flyway - Custom JDBC Connection implementation that incorporates Flyway database migration ##
